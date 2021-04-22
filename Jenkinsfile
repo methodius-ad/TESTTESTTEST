@@ -29,7 +29,7 @@ pipeline {
 
     stage('Build APK') {
 	when {
-           branch 'development'
+           branch 'master'
          }
       steps {
          withCredentials(bindings: [file(credentialsId: 'appDistributionCredential', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]) {
@@ -44,7 +44,7 @@ pipeline {
 
     stage('Deploy') {
       when {
-        branch 'master'
+        branch 'qwe'
       }
       environment {
         SIGNING_KEYSTORE = credentials('my-app-signing-keystore')
