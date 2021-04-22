@@ -28,9 +28,7 @@ pipeline {
 
 
     stage('Build APK') {
-	when {
-           branch 'master'
-         }
+
       steps {
          withCredentials(bindings: [file(credentialsId: 'appDistributionCredential', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]) {
           sh 'echo $GOOGLE_APPLICATION_CREDENTIALS'
