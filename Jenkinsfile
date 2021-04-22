@@ -30,7 +30,7 @@ pipeline {
     stage('Build APK') {
 
       steps {
-         withCredentials(bindings: [file(credentialsId: 'appDistributionCredential', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]) {
+         withCredentials(bindings: [file(credentialsId: 'appid', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]) {
           sh 'echo $GOOGLE_APPLICATION_CREDENTIALS'
           sh './gradlew assembleDebug appDistributionUploadDebug'
         }
